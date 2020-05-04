@@ -56,9 +56,14 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent mService = new Intent(MainActivity.this,WallpaperChangeService.class);
 
+                /* Membuat bundle dan menyimpan pasangan nilai dengan kuncinya*/
                 Bundle mBundleTime = new Bundle();
                 mBundleTime.putInt("durasi", mChangeTime);
+
+                /* Menaruh bundle kedalam intent*/
                 mService.putExtras(mBundleTime);
+
+                /* Memulai service*/
                 startService(mService);
                 finish();
             }
